@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
+import Sparkline from '../src/components/Sparkline'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -17,3 +18,5 @@ storiesOf('Button', module)
       </span>
     </Button>
   ));
+
+storiesOf('Sparkline', module).add('in paragraph text', () => <Sparkline /> )
