@@ -3,7 +3,7 @@ import {
   SparkXYFrame,
   SparkOrdinalFrame,
   SparkNetworkFrame
-} from "../../components"
+} from "semiotic"
 import { curveMonotoneX } from "d3-shape"
 import ProcessViz from "./ProcessViz"
 
