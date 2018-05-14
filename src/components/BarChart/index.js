@@ -24,9 +24,9 @@ function BarChart(props) {
     oLabel,
     margin,
     style: { fill: 'steelblue', stroke: 'white' },
-    type: 'bar'
-    // hoverAnnotation: true,
-    // tooltipContent
+    type: 'bar',
+    hoverAnnotation: true,
+    tooltipContent
   }
   return <OrdinalFrame {...ordinalFrameProps} />
 }

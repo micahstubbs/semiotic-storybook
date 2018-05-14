@@ -33,22 +33,33 @@ const formattedAppleStockData = [
     coordinates: appleStockData
   }
 ]
-const tweetsSmallTooltipContent = d => {
+const tweetsSmallBarChartTooltipContent = d => {
+  const { tweets, user } = d.pieces[0]
   return (
     <div className="tooltip-content">
       <p>
-        <span className="tooltip-value">{`${d.tweets} from ${d.user}`}</span>
+        <span className="tooltip-value">{`${tweets} tweets from ${user}`}</span>
       </p>
     </div>
   )
 }
-const appleStockTooltipContent = d => {
+const appleStockSparklineTooltipContent = d => {
   return (
     <div className="tooltip-content">
       <p>
         <span className="tooltip-value">{`$${d.close} per share on ${
           d.date
         }`}</span>
+      </p>
+    </div>
+  )
+}
+const appleStockBarChartTooltipContent = d => {
+  const { close, date } = d.pieces[0]
+  return (
+    <div className="tooltip-content">
+      <p>
+        <span className="tooltip-value">{`$${close} per share on ${date}`}</span>
       </p>
     </div>
   )
@@ -60,7 +71,7 @@ storiesOf('Sparkline', module).add('with hover mark and tooltip', () => (
     yAccessor="close"
     lineColor="steelblue"
     size={[460, 80]}
-    tooltipContent={appleStockTooltipContent}
+    tooltipContent={appleStockSparklineTooltipContent}
   />
 ))
 storiesOf('BarChart', module).add('Vertical', () => (
@@ -70,7 +81,7 @@ storiesOf('BarChart', module).add('Vertical', () => (
     data={tweetsSmallData}
     oAccessor="user"
     rAccessor="tweets"
-    tooltipContent={tweetsSmallTooltipContent}
+    tooltipContent={tweetsSmallBarChartTooltipContent}
     oLabel={true}
     margin={{ left: 50, right: 50, bottom: 28, top: 40 }}
   />
@@ -82,7 +93,7 @@ storiesOf('BarChart', module).add('Horizontal', () => (
     data={tweetsSmallData}
     oAccessor="user"
     rAccessor="tweets"
-    tooltipContent={tweetsSmallTooltipContent}
+    tooltipContent={tweetsSmallBarChartTooltipContent}
     oLabel={true}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
@@ -94,7 +105,7 @@ storiesOf('BarChart', module).add('Vertical Time Series', () => (
     data={appleStockData}
     oAccessor="date"
     rAccessor="close"
-    tooltipContent={appleStockTooltipContent}
+    tooltipContent={appleStockBarChartTooltipContent}
     margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
@@ -105,7 +116,7 @@ storiesOf('BarChart', module).add('Horizontal Time Series', () => (
     data={appleStockData}
     oAccessor="date"
     rAccessor="close"
-    tooltipContent={appleStockTooltipContent}
+    tooltipContent={appleStockBarChartTooltipContent}
     margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
