@@ -6,9 +6,10 @@ import { linkTo } from '@storybook/addon-links'
 
 import { Button, Welcome } from '@storybook/react/demo'
 
-import Sparkline from '../src/components/Sparkline'
 import { appleStockData } from '../data/apple-stock'
+import { tweetsSmallData } from '../data/tweets-small'
 
+import Sparkline from '../src/components/Sparkline'
 import BarChart from '../src/components/BarChart'
 
 storiesOf('Welcome', module).add('to Storybook', () => (
@@ -32,6 +33,15 @@ const formattedAppleStockData = [
     coordinates: appleStockData
   }
 ]
+const tweetsSmallTooltipContent = d => {
+  return (
+    <div className="tooltip-content">
+      <p>
+        <span className="tooltip-value">{`${d.tweets} from ${d.user}`}</span>
+      </p>
+    </div>
+  )
+}
 const appleStockTooltipContent = d => {
   return (
     <div className="tooltip-content">
@@ -53,23 +63,44 @@ storiesOf('Sparkline', module).add('with hover mark and tooltip', () => (
     tooltipContent={appleStockTooltipContent}
   />
 ))
-storiesOf('BarChart', module).add('Vertical Apple Stock', () => (
+storiesOf('BarChart', module).add('Vertical', () => (
+  <BarChart
+    size={[500, 500]}
+    data={tweetsSmallData}
+    oAccessor="user"
+    rAccessor="tweets"
+    tooltipContent={tweetsSmallTooltipContent}
+    projection="vertical"
+  />
+))
+storiesOf('BarChart', module).add('Horizontal', () => (
+  <BarChart
+    size={[500, 500]}
+    data={tweetsSmallData}
+    oAccessor="user"
+    rAccessor="tweets"
+    tooltipContent={tweetsSmallTooltipContent}
+    projection="horizontal"
+  />
+))
+storiesOf('BarChart', module).add('Vertical Time Series', () => (
   <BarChart
     size={[10000, 500]}
     data={appleStockData}
-    rAccessor="close"
     oAccessor="date"
+    rAccessor="close"
     tooltipContent={appleStockTooltipContent}
     projection="vertical"
   />
 ))
-storiesOf('BarChart', module).add('Horizontal Apple Stock', () => (
+storiesOf('BarChart', module).add('Horizontal Time Series', () => (
   <BarChart
     size={[500, 10000]}
     data={appleStockData}
-    rAccessor="close"
     oAccessor="date"
+    rAccessor="close"
     tooltipContent={appleStockTooltipContent}
     projection="horizontal"
   />
 ))
+
