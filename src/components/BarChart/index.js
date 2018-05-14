@@ -13,7 +13,8 @@ function BarChart(props) {
     tooltipContent,
     projection,
     oLabel,
-    margin
+    margin,
+    oPadding
   } = props
 
   let axisOrientation = 'bottom'
@@ -38,6 +39,7 @@ function BarChart(props) {
     oLabel,
     margin,
     tooltipContent,
+    oPadding,
     axis,
     style: { fill: 'steelblue', stroke: 'white' },
     type: 'bar',

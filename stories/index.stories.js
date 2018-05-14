@@ -85,6 +85,7 @@ storiesOf('BarChart', module).add('Vertical', () => (
     rAccessor="tweets"
     tooltipContent={tweetsSmallBarChartTooltipContent}
     oLabel={true}
+    oPadding={5}
     margin={{ left: 50, right: 50, bottom: 28, top: 40 }}
   />
 ))
@@ -97,6 +98,7 @@ storiesOf('BarChart', module).add('Horizontal', () => (
     rAccessor="tweets"
     tooltipContent={tweetsSmallBarChartTooltipContent}
     oLabel={true}
+    oPadding={5}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
 ))
