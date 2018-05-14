@@ -71,6 +71,8 @@ storiesOf('BarChart', module).add('Vertical', () => (
     rAccessor="tweets"
     tooltipContent={tweetsSmallTooltipContent}
     projection="vertical"
+    oLabel={true}
+    margin={{ left: 50, right: 50, bottom: 28, top: 40 }}
   />
 ))
 storiesOf('BarChart', module).add('Horizontal', () => (
@@ -81,6 +83,8 @@ storiesOf('BarChart', module).add('Horizontal', () => (
     rAccessor="tweets"
     tooltipContent={tweetsSmallTooltipContent}
     projection="horizontal"
+    oLabel={true}
+    margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
 ))
 storiesOf('BarChart', module).add('Vertical Time Series', () => (
@@ -91,6 +95,7 @@ storiesOf('BarChart', module).add('Vertical Time Series', () => (
     rAccessor="close"
     tooltipContent={appleStockTooltipContent}
     projection="vertical"
+    margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
 storiesOf('BarChart', module).add('Horizontal Time Series', () => (
@@ -101,6 +106,6 @@ storiesOf('BarChart', module).add('Horizontal Time Series', () => (
     rAccessor="close"
     tooltipContent={appleStockTooltipContent}
     projection="horizontal"
+    margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
-

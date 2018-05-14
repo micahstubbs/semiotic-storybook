@@ -5,17 +5,25 @@ import { OrdinalFrame } from 'semiotic'
 
 function BarChart(props) {
   console.log('props from BarChart', props)
-  const { size, data, oAccessor, rAccessor, tooltipContent, projection } = props
+  const {
+    size,
+    data,
+    oAccessor,
+    rAccessor,
+    tooltipContent,
+    projection,
+    oLabel
+  } = props
   const ordinalFrameProps = {
     size,
     data,
     oAccessor,
     rAccessor,
     projection,
-    margin: { top: 1, bottom: 1, left: 1, right: 1 },
+    oLabel,
+    margin: { left: 50, right: 50, bottom: 28, top: 40 },
     style: { fill: 'steelblue', stroke: 'white' },
-    type: 'bar',
-    oLabel: false
+    type: 'bar'
     // hoverAnnotation: true,
     // tooltipContent
   }
@@ -32,7 +40,8 @@ BarChart.propTypes = {
   oAccessor: PropTypes.string.isRequired,
   rAccessor: PropTypes.string.isRequired,
   tooltipContent: PropTypes.func,
-  projection: PropTypes.string
+  projection: PropTypes.string,
+  oLabel: PropTypes.bool
 }
 
 export default BarChart
