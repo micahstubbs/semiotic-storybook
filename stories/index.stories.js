@@ -102,6 +102,19 @@ storiesOf('BarChart', module).add('Horizontal', () => (
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
 ))
+storiesOf('BarChart', module).add('Horizontal Narrow Bars', () => (
+  <BarChart
+    projection="horizontal"
+    size={[500, 174]}
+    data={tweetsSmallData}
+    oAccessor="user"
+    rAccessor="tweets"
+    tooltipContent={tweetsSmallBarChartTooltipContent}
+    oLabel={true}
+    oPadding={5}
+    margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
+  />
+))
 storiesOf('BarChart', module).add('Vertical Time Series', () => (
   <BarChart
     projection="vertical"
