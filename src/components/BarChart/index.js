@@ -12,7 +12,8 @@ function BarChart(props) {
     rAccessor,
     tooltipContent,
     projection,
-    oLabel
+    oLabel,
+    margin
   } = props
   const ordinalFrameProps = {
     size,
@@ -21,7 +22,7 @@ function BarChart(props) {
     rAccessor,
     projection,
     oLabel,
-    margin: { left: 50, right: 50, bottom: 28, top: 40 },
+    margin,
     style: { fill: 'steelblue', stroke: 'white' },
     type: 'bar'
     // hoverAnnotation: true,
