@@ -1,0 +1,16 @@
+.ordinal-labels text {
+  fill: black;
+}
+
+.axis text {
+  fill: black;
+}
+
+.axis path {
+  stroke: lightgrey;
+}
+
+.lightgreyaxis path {
+  stroke: lightgrey;
+}
+

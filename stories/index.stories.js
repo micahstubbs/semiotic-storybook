@@ -12,6 +12,8 @@ import { tweetsSmallData } from '../data/tweets-small'
 import Sparkline from '../src/components/Sparkline'
 import BarChart from '../src/components/BarChart'
 
+import './styles.css'
+
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
 ))

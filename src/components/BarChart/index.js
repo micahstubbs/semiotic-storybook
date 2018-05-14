@@ -15,6 +15,17 @@ function BarChart(props) {
     oLabel,
     margin
   } = props
+
+  const axis = {
+    orient: 'left',
+    tickFormat: d => d,
+    label: {
+      name: 'axis label',
+      position: { anchor: 'middle' },
+      locationDistance: 40
+    }
+  }
+
   const ordinalFrameProps = {
     size,
     data,
@@ -23,10 +34,11 @@ function BarChart(props) {
     projection,
     oLabel,
     margin,
+    tooltipContent,
+    axis,
     style: { fill: 'steelblue', stroke: 'white' },
     type: 'bar',
-    hoverAnnotation: true,
-    tooltipContent
+    hoverAnnotation: true
   }
   return <OrdinalFrame {...ordinalFrameProps} />
 }
