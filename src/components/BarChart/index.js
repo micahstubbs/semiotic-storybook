@@ -14,7 +14,8 @@ function BarChart(props) {
     projection,
     oLabel,
     margin,
-    oPadding
+    oPadding,
+    pixelColumnWidth
   } = props
 
   let axisOrientation = 'bottom'
@@ -40,6 +41,7 @@ function BarChart(props) {
     margin,
     tooltipContent,
     oPadding,
+    pixelColumnWidth,
     axis,
     style: { fill: 'steelblue', stroke: 'white' },
     type: 'bar',
