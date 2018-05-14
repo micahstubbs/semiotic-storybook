@@ -31,7 +31,8 @@ BarChart.propTypes = {
   data: PropTypes.array.isRequired,
   oAccessor: PropTypes.string.isRequired,
   rAccessor: PropTypes.string.isRequired,
-  tooltipContent: PropTypes.func
+  tooltipContent: PropTypes.func,
+  projection: PropTypes.string
 }
 
 export default BarChart
