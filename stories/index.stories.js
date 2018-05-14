@@ -65,12 +65,12 @@ storiesOf('Sparkline', module).add('with hover mark and tooltip', () => (
 ))
 storiesOf('BarChart', module).add('Vertical', () => (
   <BarChart
+    projection="vertical"
     size={[500, 500]}
     data={tweetsSmallData}
     oAccessor="user"
     rAccessor="tweets"
     tooltipContent={tweetsSmallTooltipContent}
-    projection="vertical"
     oLabel={true}
     margin={{ left: 50, right: 50, bottom: 28, top: 40 }}
   />
@@ -100,12 +100,12 @@ storiesOf('BarChart', module).add('Vertical Time Series', () => (
 ))
 storiesOf('BarChart', module).add('Horizontal Time Series', () => (
   <BarChart
+    projection="horizontal"
     size={[500, 10000]}
     data={appleStockData}
     oAccessor="date"
     rAccessor="close"
     tooltipContent={appleStockTooltipContent}
-    projection="horizontal"
     margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
