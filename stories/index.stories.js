@@ -77,24 +77,24 @@ storiesOf('BarChart', module).add('Vertical', () => (
 ))
 storiesOf('BarChart', module).add('Horizontal', () => (
   <BarChart
+    projection="horizontal"
     size={[500, 500]}
     data={tweetsSmallData}
     oAccessor="user"
     rAccessor="tweets"
     tooltipContent={tweetsSmallTooltipContent}
-    projection="horizontal"
     oLabel={true}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
 ))
 storiesOf('BarChart', module).add('Vertical Time Series', () => (
   <BarChart
+    projection="vertical"
     size={[10000, 500]}
     data={appleStockData}
     oAccessor="date"
     rAccessor="close"
     tooltipContent={appleStockTooltipContent}
-    projection="vertical"
     margin={{ left: 1, right: 1, bottom: 1, top: 1 }}
   />
 ))
