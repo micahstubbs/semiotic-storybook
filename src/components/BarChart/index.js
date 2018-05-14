@@ -16,8 +16,11 @@ function BarChart(props) {
     margin
   } = props
 
+  let axisOrientation = 'bottom'
+  if (projection === 'horizontal') axisOrientation = 'left'
+
   const axis = {
-    orient: 'left',
+    orient: axisOrientation,
     tickFormat: d => d,
     label: {
       name: 'axis label',
