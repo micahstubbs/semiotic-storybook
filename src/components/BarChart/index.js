@@ -59,7 +59,10 @@ BarChart.propTypes = {
   rAccessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   tooltipContent: PropTypes.func,
   projection: PropTypes.string,
-  oLabel: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+  oLabel: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  oPadding: PropTypes.number,
+  pixelColumnWidth: PropTypes.number
 }
 
 export default BarChart
