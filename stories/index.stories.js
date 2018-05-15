@@ -97,7 +97,11 @@ storiesOf('BarChart', module).add('Horizontal', () => (
     oAccessor="user"
     rAccessor="tweets"
     tooltipContent={tweetsSmallBarChartTooltipContent}
-    oLabel={true}
+    oLabel={(d, i) => (
+      <text style={{ textAnchor: 'end' }} y={4}>
+        {d}
+      </text>
+    )}
     oPadding={5}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
@@ -125,7 +129,11 @@ storiesOf('BarChart', module).add('Horizontal Narrow Bars', () => (
     oAccessor="user"
     rAccessor="tweets"
     tooltipContent={tweetsSmallBarChartTooltipContent}
-    oLabel={true}
+    oLabel={(d, i) => (
+      <text style={{ textAnchor: 'end' }} y={4}>
+        {d}
+      </text>
+    )}
     oPadding={5}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
