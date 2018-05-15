@@ -52,18 +52,14 @@ function BarChart(props) {
   return <OrdinalFrame {...ordinalFrameProps} />
 }
 
-// xAccessor and yAccessor
-// could be a functions too iirc
-// update the proptypes for these
-// to be function or string later
 BarChart.propTypes = {
   size: PropTypes.array,
   data: PropTypes.array.isRequired,
-  oAccessor: PropTypes.string.isRequired,
-  rAccessor: PropTypes.string.isRequired,
+  oAccessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  rAccessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   tooltipContent: PropTypes.func,
   projection: PropTypes.string,
-  oLabel: PropTypes.bool
+  oLabel: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
 }
 
 export default BarChart
