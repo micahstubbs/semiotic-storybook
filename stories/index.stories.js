@@ -102,6 +102,9 @@ storiesOf('BarChart', module).add('Horizontal', () => (
         {d}
       </text>
     )}
+    customHoverBehavior={d => {
+      console.info('custom hover d', d)
+    }}
     oPadding={5}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />
@@ -134,6 +137,9 @@ storiesOf('BarChart', module).add('Horizontal Narrow Bars', () => (
         {d}
       </text>
     )}
+    customHoverBehavior={d => {
+      console.info('custom hover d', d)
+    }}
     oPadding={5}
     margin={{ left: 60, right: 50, bottom: 28, top: 40 }}
   />

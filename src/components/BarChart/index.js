@@ -15,7 +15,8 @@ function BarChart(props) {
     oLabel,
     margin,
     oPadding,
-    pixelColumnWidth
+    pixelColumnWidth,
+    customHoverBehavior
   } = props
 
   let axisOrientation = 'bottom'
@@ -42,6 +43,7 @@ function BarChart(props) {
     tooltipContent,
     oPadding,
     pixelColumnWidth,
+    customHoverBehavior,
     axis,
     style: { fill: 'steelblue', stroke: 'white' },
     type: 'bar',
